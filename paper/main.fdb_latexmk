@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1781885222.46992 "paper/main.tex" "paper/main.pdf" "main" 1781885223.66936 0
+["pdflatex"] 1781885896.65684 "paper/main.tex" "paper/main.pdf" "main" 1781885898.03079 0
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -239,9 +239,9 @@
   "figures/fig_subproblems.tex" 1781812714.46744 1252 0b0cb8e02f640e169e6e9deeb67d0d75 ""
   "figures/fig_vtable.png" 1781812841.0865 54942 249bea7c0561d2d544b18e81f3f40523 ""
   "figures/sign_hires.png" 1781875460.95207 83433 c13dbe56dbcd9c69989bc4ae93c46c52 ""
-  "paper/main.aux" 1781885223.58639 12589 67a34acbb46d5948cb760a697df579af "pdflatex"
-  "paper/main.out" 1781885223.58722 4420 c0c92bad947e3ebb0f9254c20b921f63 "pdflatex"
-  "paper/main.tex" 1781885112.23201 35645 3951dc0feda77a699029e41d56abdcc9 ""
+  "paper/main.aux" 1781885897.91844 12589 67a34acbb46d5948cb760a697df579af "pdflatex"
+  "paper/main.out" 1781885897.92027 4420 c0c92bad947e3ebb0f9254c20b921f63 "pdflatex"
+  "paper/main.tex" 1781885804.48325 35656 eb1d2ffdfe4451cef0e76455add10583 ""
   (generated)
   "paper/main.aux"
   "paper/main.log"
