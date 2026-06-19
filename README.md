@@ -1,6 +1,6 @@
 # Dynamic Programming for BESS Arbitrage with Degradation Cost
 
-> built IF2211 Strategi Algoritma
+> built for IF2211 Strategi Algoritma
 
 ## Idea
 Schedule one battery to buy cheap and sell expensive electricity over a day.
