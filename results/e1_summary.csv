@@ -1,0 +1,4 @@
+method,total_true_net,total_gross,total_real_deg,total_throughput,total_cycles
+dp_deg,1389.63,3555.63,2166,180.5,90.25
+dp_nodeg,-6924.74,8645.26,15570,1297.5,648.75
+greedy,-4996.59,6397.41,11394,949.5,474.75
