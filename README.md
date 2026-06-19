@@ -30,7 +30,7 @@ German and Luxembourg bidding zone, calendar year 2019.
 https://data.open-power-system-data.org/time_series/
 
 ## Experiments
-> E1 main comparison: DP with wear vs DP without wear vs greedy threshold.
-> E2 sensitivity to the planned wear cost.
-> E3 effect of the SoC grid size on profit and runtime.
-> E4 empirical runtime against horizon length and grid size.
+- E1 main comparison: DP with wear vs DP without wear vs greedy threshold.
+- E2 sensitivity to the planned wear cost.
+- E3 effect of the SoC grid size on profit and runtime.
+- E4 empirical runtime against horizon length and grid size.
