@@ -1,0 +1,56 @@
+% Example day: price curve, optimal SoC path, and charge/discharge actions.
+% Data: figures/example_day.csv (from the C++ DP solver, real 2019-01-24 prices).
+% Two stacked axes share the same frame. The left axis shows the SoC and the
+% action. The right axis shows the price. We give the right axis label its own
+% room with ylabel near ticks so the two y labels do not overlap.
+\begin{tikzpicture}
+% Left axis: SoC and net action bars.
+\begin{axis}[
+    name=axsoc,
+    width=0.80\columnwidth,
+    height=5.0cm,
+    xlabel={Hour of day},
+    ylabel={SoC and action (MWh)},
+    xmin=-0.5, xmax=23.5,
+    xtick={0,4,8,12,16,20,23},
+    ymin=-0.6, ymax=1.15,
+    ytick={-0.5,0,0.5,1.0},
+    axis y line*=left,
+    axis x line=bottom,
+    ylabel near ticks,
+    enlarge x limits=false,
+    tick label style={font=\scriptsize},
+    label style={font=\scriptsize},
+    legend style={font=\scriptsize, at={(0.02,0.98)}, anchor=north west,
+                  draw=none, fill=white, fill opacity=0.75, text opacity=1},
+]
+\addplot[ybar, bar width=5pt, fill=green!55!black, draw=green!40!black,
+         fill opacity=0.6]
+    table[col sep=comma, x=hour, y=net_action] {figures/example_day.csv};
+\addlegendentry{Charge (+) / Discharge (-)}
+\addplot[red, thick, mark=square*, mark size=1pt]
+    table[col sep=comma, x=hour, y=soc] {figures/example_day.csv};
+\addlegendentry{SoC}
+\end{axis}
+
+% Right axis: price. Same frame, only the right y axis is drawn.
+\begin{axis}[
+    width=0.80\columnwidth,
+    height=5.0cm,
+    at={(axsoc.south east)}, anchor=south east,
+    xmin=-0.5, xmax=23.5,
+    ymin=40, ymax=130,
+    axis y line*=right,
+    axis x line=none,
+    ylabel={Price (EUR/MWh)},
+    ylabel near ticks,
+    tick label style={font=\scriptsize},
+    label style={font=\scriptsize},
+    legend style={font=\scriptsize, at={(0.98,0.02)}, anchor=south east,
+                  draw=none, fill=white, fill opacity=0.75, text opacity=1},
+]
+\addplot[blue, thick, mark=*, mark size=1pt]
+    table[col sep=comma, x=hour, y=price] {figures/example_day.csv};
+\addlegendentry{Price}
+\end{axis}
+\end{tikzpicture}

@@ -1,0 +1,31 @@
+% Overlapping subproblems. A naive recursion on the value function expands the
+% same state many times. Here we show the recursion for V_t(s) as a tree. Nodes
+% with the same (stage, SoC) label, shaded the same color, are the same
+% subproblem. A table stores each one so it is solved only once.
+\begin{tikzpicture}[
+    level distance=10mm,
+    sibling distance=15mm,
+    every node/.style={font=\scriptsize},
+    sub/.style={draw, rounded corners=2pt, inner sep=2pt, minimum size=6mm},
+    rep/.style={sub, fill=orange!25},
+    repb/.style={sub, fill=cyan!20},
+    norm/.style={sub, fill=blue!6},
+    edge from parent/.style={draw, black!55, -{Stealth[length=4pt]}},
+]
+\node[norm] {$V_t(s)$}
+  child {node[norm] {$V_{t+1}(s{-}1)$}
+    child {node[rep] {$V_{t+2}(s{-}1)$}}
+    child {node[repb] {$V_{t+2}(s{-}2)$}}
+  }
+  child {node[norm] {$V_{t+1}(s)$}
+    child {node[rep] {$V_{t+2}(s{-}1)$}}
+    child {node[norm] {$V_{t+2}(s)$}}
+  }
+  child {node[norm] {$V_{t+1}(s{+}1)$}
+    child {node[norm] {$V_{t+2}(s)$}}
+    child {node[repb] {$V_{t+2}(s{-}2)$}}
+  };
+% Note about the repeats.
+\node[font=\scriptsize, align=left, anchor=north west]
+  at (3.0,-0.2) {Same color, same\\subproblem. The DP\\table solves each\\one only once.};
+\end{tikzpicture}

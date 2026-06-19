@@ -1,0 +1,46 @@
+% E2: sensitivity to the planned degradation cost.
+% Left axis: yearly true net profit (scored at the real cost).
+% Right axis: yearly equivalent full cycles.
+% Data: figures/e2_cdeg_sweep.csv
+% Two stacked axes share the same frame. ylabel near ticks keeps each y label
+% close to its own axis so the left and right labels do not overlap.
+\begin{tikzpicture}
+\begin{axis}[
+    name=axnet,
+    width=0.80\columnwidth,
+    height=5.2cm,
+    xlabel={Planned degradation cost (EUR/MWh)},
+    ylabel={Yearly true net profit (EUR)},
+    xmin=0, xmax=30,
+    axis y line*=left,
+    ylabel near ticks,
+    tick label style={font=\scriptsize},
+    label style={font=\scriptsize},
+    legend style={font=\scriptsize, at={(0.97,0.55)}, anchor=east,
+                  draw=none, fill=white, fill opacity=0.75, text opacity=1},
+]
+\addplot[blue, thick, mark=*, mark size=1.3pt]
+    table[col sep=comma, x=plan_c_deg, y=true_net] {figures/e2_cdeg_sweep.csv};
+\addlegendentry{True net profit}
+% Mark the real cost c_deg = 12 with a vertical line.
+\addplot[gray, dashed, thick] coordinates {(12,-7000) (12,2000)};
+\end{axis}
+\begin{axis}[
+    width=0.80\columnwidth,
+    height=5.2cm,
+    at={(axnet.south east)}, anchor=south east,
+    xmin=0, xmax=30,
+    axis y line*=right,
+    axis x line=none,
+    ylabel={Yearly full cycles},
+    ylabel near ticks,
+    tick label style={font=\scriptsize},
+    label style={font=\scriptsize},
+    legend style={font=\scriptsize, at={(0.97,0.33)}, anchor=east,
+                  draw=none, fill=white, fill opacity=0.75, text opacity=1},
+]
+\addplot[red, thick, mark=square*, mark size=1.3pt]
+    table[col sep=comma, x=plan_c_deg, y=total_cycles] {figures/e2_cdeg_sweep.csv};
+\addlegendentry{Full cycles}
+\end{axis}
+\end{tikzpicture}
